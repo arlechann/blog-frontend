@@ -1,0 +1,15 @@
+services:
+  nginx:
+    build: ./frontend
+    image: blog-nginx
+    environment:
+      TZ: Asia/Tokyo
+    ports:
+      - 80:80
+    networks:
+      - app
+
+networks:
+  app:
+    external: true
+    name: blog-network
