@@ -1,4 +1,4 @@
-import { IndexPage } from "./components/pages/index.js";
+import { IndexPage } from "./components/pages/index";
 
 customElements.define('index-page', IndexPage);
 
