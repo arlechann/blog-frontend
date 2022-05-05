@@ -1,0 +1,24 @@
+{
+  "name": "name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "server": "http-server-spa public index.html 8080",
+    "test": "TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\"}' mocha --require ts-node/register test/**/*.test.ts"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@types/chai": "*",
+    "@types/mocha": "*",
+    "@types/node": "*",
+    "chai": "*",
+    "http-server-spa": "^1.3.0",
+    "mocha": "*",
+    "ts-node": "*",
+    "typescript": "*"
+  }
+}
