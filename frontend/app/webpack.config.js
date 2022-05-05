@@ -1,16 +1,16 @@
 module.exports = {
   mode: 'development',
-  entry: './src/app.ts',
+  entry: './src/app.tsx',
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: 'ts-loader',
       },
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.tsx', '.js'],
   },
   output: {
     filename: 'app.js',
