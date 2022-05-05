@@ -1,0 +1,21 @@
+{
+  "name": "name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\"}' mocha --require ts-node/register test/**/*.test.ts"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@types/chai": "*",
+    "@types/mocha": "*",
+    "@types/node": "*",
+    "chai": "*",
+    "mocha": "*",
+    "ts-node": "*",
+    "typescript": "*"
+  }
+}
