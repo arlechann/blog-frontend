@@ -1,8 +1,17 @@
-import { render } from 'preact';
+import { FunctionComponent, render } from 'preact';
+import Router from 'preact-router';
 
-import { IndexPage } from './components/pages';
+import { IndexPage } from './pages';
 
 const root = document.getElementById('app');
 if (root == null) { throw new Error; }
 
-render(<IndexPage title="Index Page" />, root);
+const App: FunctionComponent = () => {
+  return (
+    <Router>
+      <IndexPage path='/' />
+    </Router>
+  );
+};
+
+render(<App />, root);
