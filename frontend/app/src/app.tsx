@@ -4,9 +4,7 @@ import { Route, Router } from 'preact-router';
 import { Header } from './components/header';
 import { IndexPage } from './pages';
 import { PostListPage } from './pages/post-list';
-
-const root = document.getElementById('app');
-if (root == null) { throw new Error; }
+import { PostPage } from './pages/post';
 
 const App: FunctionComponent = () => {
   return (
@@ -15,6 +13,7 @@ const App: FunctionComponent = () => {
       <Router>
         <Route path='/' component={IndexPage} />
         <Route path='/posts' component={PostListPage} />
+        <Route path='/posts/:slug+' component={PostPage} />
         <div default><h1>404 Not Found</h1></div>
       </Router>
     </>

@@ -1,3 +1,3 @@
 export type PageProps = {
-  readonly path: string
+  readonly path: string;
 };
