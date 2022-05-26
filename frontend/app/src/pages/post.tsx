@@ -18,11 +18,16 @@ export const PostPage: FunctionComponent<PostPageProps> = (props: PostPageProps)
   return (
     <main>
       <article>
-        <div>{post.title}</div>
-        <div>
-          <span>update: {format(post.lastUpdatedDate, 'yyyy-MM-dd')}, </span><span>posted: {format(post.createdDate, 'yyyy-MM-dd')}</span>
-        </div>
-        <div>{post.content}</div>
+        <header>
+          <h1>{post.title}</h1>
+          <section>
+            Updated: <time>{format(post.lastUpdatedDate, 'yyyy-MM-dd')}</time>,
+            Posted: <time>{format(post.createdDate, 'yyyy-MM-dd')}</time>
+          </section>
+        </header>
+        <section>
+          {post.content}
+        </section>
       </article>
     </main>
   );
