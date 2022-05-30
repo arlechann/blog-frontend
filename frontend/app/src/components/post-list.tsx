@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'preact';
-import { Post } from '../types/post';
+import { Post } from '../models/post';
 import { PostListItem } from './post-list-item';
 
 type PostListProps = {
