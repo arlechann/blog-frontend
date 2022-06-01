@@ -1,21 +1,24 @@
 import { FunctionComponent } from 'preact';
 import { PageProps } from '../types/page';
-
 import { PostList } from '../components/post-list';
+
+import { config } from '../config';
+import { mapAPIPost, APIPost, Post } from '../models/post';
+import { useAPI } from '../hooks/use-api';
 
 type PostListPageProps = PageProps;
 
 export const PostListPage: FunctionComponent<PostListPageProps> = (props: PostListPageProps) => {
-  const post = {
-    slug: 'slug',
-    title: '記事タイトル',
-    content: '記事本文',
-    createdDate: new Date,
-    lastUpdatedDate: new Date,
-  };
+  const posts: Post[] = useAPI<APIPost[]>(config.API_URL + '/posts', {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+    },
+  }, []).map(mapAPIPost);
+
   return (
     <main>
-      <PostList posts={[post, post, post]} />
+      <PostList posts={posts} />
     </main>
   );
 };
