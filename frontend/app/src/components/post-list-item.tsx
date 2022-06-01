@@ -1,5 +1,5 @@
 import { FunctionComponent } from "preact";
-import { Post } from "../models/post";
+import { Post, summarize } from "../models/post";
 
 type PostListItemProps = {
   post: Post
@@ -10,7 +10,7 @@ export const PostListItem: FunctionComponent<PostListItemProps> = ({ post }: Pos
     <li>
       <article>
         <a href={`/posts/${post.slug}`}><h2>{post.title}</h2></a>
-        <p>{post.content}</p>
+        <p>{summarize(post.content)}</p>
       </article>
     </li>
   );

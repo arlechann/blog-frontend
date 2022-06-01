@@ -23,3 +23,8 @@ export const mapAPIPost = (apiPost: APIPost): Post => ({
   createdDate: parse(apiPost.created_at, 'yyyy-MM-dd HH:mm:ss XXXX', Date.now()),
   lastUpdatedDate: parse(apiPost.last_updated_at, 'yyyy-MM-dd HH:mm:ss XXXX', Date.now()),
 });
+
+export const summarize = (str: string): string => {
+  const max = 200;
+  return str.slice(0, max - 3) + '...';
+};
