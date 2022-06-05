@@ -25,6 +25,6 @@ export const mapAPIPost = (apiPost: APIPost): Post => ({
 });
 
 export const summarize = (str: string): string => {
-  const max = 200;
-  return str.slice(0, max - 3) + '...';
+  const max = 15;
+  return str.split('\n', max).join('');
 };
