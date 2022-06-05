@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'preact';
 import { format } from 'date-fns';
+import { marked } from 'marked';
 import { Post } from '../models/post';
 
 type PostProps = {
@@ -7,6 +8,8 @@ type PostProps = {
 };
 
 export const PostDetail: FunctionComponent<PostProps> = (props: PostProps) => {
+  const postContentHTML = marked.parse(props.post.content, { gfm: true });
+
   return (
     <article>
       <header>
@@ -16,8 +19,7 @@ export const PostDetail: FunctionComponent<PostProps> = (props: PostProps) => {
           Posted: <time>{format(props.post.createdDate, 'yyyy-MM-dd')}</time>
         </section>
       </header>
-      <section>
-        {props.post.content}
+      <section dangerouslySetInnerHTML={{ __html: postContentHTML }}>
       </section>
     </article>
   );
